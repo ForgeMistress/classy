@@ -1,0 +1,31 @@
+###############################################################################################################
+#####  ProFi, a lua profiler. This profile was generated on: 12/28/16 23:18:53
+#####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
+#####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
+###############################################################################################################
+
+| TOTAL TIME = 4.952000
+| FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
+| .\classy.lua                                      : new                                     :  105                : 4.207       : 84.96%      :  500000     |
+| [string "BaseClass"]                              : allocator                               :    0                : 0.645       : 13.03%      :  500000     |
+| profile.lua                                       : __init__                                :   34                : 0.551       : 11.13%      :  500000     |
+| .\ProFi.lua                                       : setHighestMemoryReport                  :  408                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : setLowestMemoryReport                   :  418                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : startHooks                              :  234                : 0.000       : 0.00%       :       0     |
+| .\ProFi.lua                                       : stop                                    :   85                : 0.000       : 0.00%       :       1     |
+| [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : shouldReturn                            :  199                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : checkMemory                             :   94                : 0.000       : 0.00%       :       1     |
+| [C]                                               : collectgarbage                          :   -1                : 0.000       : 0.00%       :       2     |
+| [C]                                               : pairs                                   :   -1                : 0.000       : 0.00%       :  500000     |
+| [C]                                               : getTime                                 :   -1                : 0.000       : 0.00%       :       3     |
+| .\ProFi.lua                                       : stopHooks                               :  238                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : start                                   :   67                : 0.000       : 0.00%       :       0     |
+| [C]                                               : setmetatable                            :   -1                : 0.000       : 0.00%       :  500000     |
+| [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |
+
+=== HIGH & LOW MEMORY USAGE ===============================
+H 4.956               :   66670 Kbytes  :    65.1 Mbytes  H classy allocation Iteration 500000
+L 4.956               :   66670 Kbytes  :    65.1 Mbytes  L classy allocation Iteration 500000
+=== MEMORY USAGE ==========================================
+| 4.956               :   66670 Kbytes  :    65.1 Mbytes  | classy allocation Iteration 500000
