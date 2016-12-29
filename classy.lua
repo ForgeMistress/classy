@@ -63,7 +63,7 @@ end
 
 local classy = {}
 
-local function __makeAllocatorFunction(className, classTemplate, super)
+local function _makeAllocatorFunction(className, classTemplate, super)
 	local final
 	if super then
 		final = _mergeTables(className, classTemplate, super.allocator(super))
@@ -78,10 +78,14 @@ local function __makeAllocatorFunction(className, classTemplate, super)
 end
 
 local __maxClassID = 0
-local function __makeClassID(klass)
+local function _makeClassID(klass)
 	local id = __maxClassID + 1
 	__maxClassID = id
 	return id
+end
+
+local function _instanceToString(instance)
+	return ("instance of "..instance.class.name)
 end
 
 local function _classFinalize(klass)
@@ -90,12 +94,11 @@ local function _classFinalize(klass)
 	end
 	if klass.super then
 		setmetatable(klass.methods, { __index=klass.super.methods })
-		--setmetatable(klass.static, { __index=klass.super.static })
 	end
 	
 	klass.__m_instanceMT = {
 		__index = klass.methods;
-		__tostring = ("instance of "..klass.name);
+		__tostring = _instanceToString;
 	}
 	
 	return klass
@@ -174,6 +177,10 @@ local function _classNewIndex(klass, key, value)
 	klass.static[key] = value
 end;
 
+local function _classToString(klass) 
+	return ("class "..klass.name) 
+end
+
 -- Process for making a class:
 --    Call class() or Class:subclass() while passing it in a template table.
 function classy._defineClassImpl(name, classTemplate, superclass)
@@ -188,7 +195,7 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 		name=name;
 		super=superclass;
 
-		allocator = __makeAllocatorFunction(name, classTemplate, superclass);
+		allocator = _makeAllocatorFunction(name, classTemplate, superclass);
 
 		methods = {
 			IsInstanceOf = _instanceIsInstanceOf;
@@ -197,7 +204,7 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 		
 		mixins = {};
 		
-		id     = __makeClassID();
+		id     = _makeClassID();
 
 		new      = _classNew;
 		subclass = _classSubclass;
@@ -215,7 +222,7 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 	});
 	classtbl = setmetatable(classtbl, {
 		__index = classtbl.static;
-		__tostring = ("class "..classtbl.name);
+		__tostring = _classToString;
 		__newindex = _classNewIndex;
 	})
 	
