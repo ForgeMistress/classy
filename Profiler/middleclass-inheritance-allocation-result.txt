@@ -1,17 +1,17 @@
 ###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 00:36:58
+#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 02:11:23
 #####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
 #####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
 ###############################################################################################################
 
-| TOTAL TIME = 21.931000
+| TOTAL TIME = 22.101000
 | FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
-| .\middleclass.lua                                 : new                                     :  123                : 17.244      : 78.63%      :  500000     |
-| .\middleclass.lua                                 : __index                                 :   82                : 6.949       : 31.69%      : 2500000     |
-| profile.lua                                       : initialize                              :   94                : 6.346       : 28.94%      :  500000     |
-| profile.lua                                       : initialize                              :   87                : 3.660       : 16.69%      :  500000     |
-| .\middleclass.lua                                 : __index                                 :   35                : 1.186       : 5.41%       :  500000     |
-| profile.lua                                       : initialize                              :   76                : 1.179       : 5.38%       :  500000     |
+| .\middleclass.lua                                 : new                                     :  123                : 17.373      : 78.61%      :  500000     |
+| .\middleclass.lua                                 : __index                                 :   82                : 6.834       : 30.92%      : 2500000     |
+| profile.lua                                       : initialize                              :   94                : 6.411       : 29.01%      :  500000     |
+| profile.lua                                       : initialize                              :   87                : 3.633       : 16.44%      :  500000     |
+| .\middleclass.lua                                 : __index                                 :   35                : 1.234       : 5.58%       :  500000     |
+| profile.lua                                       : initialize                              :   76                : 1.184       : 5.36%       :  500000     |
 | [C]                                               : collectgarbage                          :   -1                : 0.000       : 0.00%       :       2     |
 | .\ProFi.lua                                       : checkMemory                             :   94                : 0.000       : 0.00%       :       1     |
 | .\ProFi.lua                                       : setHighestMemoryReport                  :  408                : 0.000       : 0.00%       :       1     |
@@ -33,7 +33,7 @@
 | [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |
 
 === HIGH & LOW MEMORY USAGE ===============================
-H 21.934              :  152609 Kbytes  :   149.0 Mbytes  H middleclass inheritance-allocation Iteration 500000
-L 21.934              :  152609 Kbytes  :   149.0 Mbytes  L middleclass inheritance-allocation Iteration 500000
+H 22.104              :  152609 Kbytes  :   149.0 Mbytes  H middleclass inheritance-allocation Iteration 500000
+L 22.104              :  152609 Kbytes  :   149.0 Mbytes  L middleclass inheritance-allocation Iteration 500000
 === MEMORY USAGE ==========================================
-| 21.934              :  152609 Kbytes  :   149.0 Mbytes  | middleclass inheritance-allocation Iteration 500000
+| 22.104              :  152609 Kbytes  :   149.0 Mbytes  | middleclass inheritance-allocation Iteration 500000

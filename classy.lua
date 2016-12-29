@@ -91,7 +91,7 @@ local function _classFinalize(klass)
 
 	if klass.super then
 		setmetatable(klass.methods, { __index=klass.super.methods })
-		setmetatable(klass.static, { __index=klass.super.static })
+		--setmetatable(klass.static, { __index=klass.super.static })
 	end
 	
 	klass.__m_instanceMT = {
@@ -139,10 +139,9 @@ local function _classInclude(klass, mixin)
 	assert(not klass.mixins[mixin], "Mixin already included.")
 	
 	klass.methods = _mergeTables(klass.name, klass.methods, mixin.methods)
-	klass.static = _mergeTables(klass.name, klass.static, mixin.static)
+	klass = _mergeTables(klass.name, klass, mixin.static)
 
 	klass.mixins[mixin] = true
-
 	return klass
 end
 
@@ -155,16 +154,7 @@ local __classMT = {
 		return "class "..klass.name
 	end;
 	
-	__newindex = function(klass, key, value)
-		if klass.__m_instanceMT then
-			error("AssertNotFinalized: Class "..klass.name.." has already been finalized.", 2)
-		end
-		
-		if type(value) == 'function' then
-			klass.methods[key] = value
-			return
-		end
-	end;
+	
 }
 
 local function _instanceIsInstanceOf(instance, klass)
@@ -175,11 +165,11 @@ local function _classIsSubclassOf(klass, otherKlass)
 	if klass.id == otherKlass.id then 
 		return true 
 	end
-	
+
 	if klass.super then
 		return klass.super:IsSubclassOf(otherKlass)
 	end
-	
+
 	return false
 end
 
@@ -203,9 +193,6 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 			IsInstanceOf = _instanceIsInstanceOf;
 		};
 		
-		static = {
-			IsSubclassOf = _classIsSubclassOf;
-		};
 		mixins = {};
 		
 		id     = __makeClassID();
@@ -214,12 +201,30 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 		subclass = _classSubclass;
 		finalize = _classFinalize;
 		include  = _classInclude;
+		
+		IsSubclassOf = _classIsSubclassOf;
 
 		__m_instanceMT = false;
 
 		__CLASSTAG__ = __classtag;
 	}
-	classtbl = setmetatable(classtbl, __classMT)
+	classtbl = setmetatable(classtbl, {
+		__index = classtbl.methods;
+		__tostring = ("class "..classtbl.name);
+		__newindex = function(klass, key, value)
+			if klass.__m_instanceMT then
+				error("AssertNotFinalized: Class "..klass.name.." has already been finalized.", 2)
+			end
+			
+			if type(value) == 'function' then
+				klass.methods[key] = value
+				return
+			end
+			
+			assert(not klass[key], "Class already has key "..key)
+			klass[key] = value
+		end;
+	})
 	
 	return classtbl
 end
