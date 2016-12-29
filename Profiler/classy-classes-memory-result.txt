@@ -1,5 +1,5 @@
 ###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 02:10:39
+#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 02:37:35
 #####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
 #####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
 ###############################################################################################################
@@ -7,11 +7,11 @@
 | TOTAL TIME = 0.000000
 | FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
 | .\ProFi.lua                                       : startHooks                              :  234                : 0.000       : nan%        :       0     |
-| .\classy.lua                                      : __newindex                              :  214                : 0.000       : nan%        :       4     |
+| .\classy.lua                                      : __newindex                              :  163                : 0.000       : nan%        :       4     |
 | .\classy.lua                                      : finalize                                :   87                : 0.000       : nan%        :       3     |
-| .\classy.lua                                      : subclass                                :  128                : 0.000       : nan%        :       2     |
+| .\classy.lua                                      : subclass                                :  127                : 0.000       : nan%        :       2     |
 | .\classy.lua                                      : subclass                                :  178                : 0.000       : nan%        :       2     |
-| [C]                                               : setmetatable                            :   -1                : 0.000       : nan%        :       5     |
+| [C]                                               : setmetatable                            :   -1                : 0.000       : nan%        :       7     |
 | [C]                                               : __makeAllocatorFunction                 :   -1                : 0.000       : nan%        :       3     |
 | .\classy.lua                                      : __makeClassID                           :   81                : 0.000       : nan%        :       3     |
 | [C]                                               : loadstring                              :   -1                : 0.000       : nan%        :       3     |
@@ -33,10 +33,10 @@
 | [C]                                               : format                                  :   -1                : 0.000       : nan%        :       6     |
 | .\classy.lua                                      : class                                   :  178                : 0.000       : nan%        :       1     |
 | .\ProFi.lua                                       : start                                   :   67                : 0.000       : nan%        :       0     |
-| .\classy.lua                                      : class                                   :  240                : 0.000       : nan%        :       1     |
+| .\classy.lua                                      : class                                   :  229                : 0.000       : nan%        :       1     |
 | [C]                                               : getTime                                 :   -1                : 0.000       : nan%        :       3     |
 | [C]                                               : concat                                  :   -1                : 0.000       : nan%        :       3     |
-| [C]                                               : assert                                  :   -1                : 0.000       : nan%        :      28     |
+| [C]                                               : assert                                  :   -1                : 0.000       : nan%        :      32     |
 | .\classy.lua                                      : tbl_to_str                              :   36                : 0.000       : nan%        :       3     |
 | .\classy.lua                                      : __val_to_str                            :   12                : 0.000       : nan%        :      16     |
 | [C]                                               : __val_to_str                            :   -1                : 0.000       : nan%        :      16     |
@@ -48,7 +48,7 @@
 | [C]                                               : sethook                                 :   -1                : 0.000       : nan%        :       1     |
 
 === HIGH & LOW MEMORY USAGE ===============================
-H 0.001               :      89 Kbytes  :     0.1 Mbytes  H BaseClass/Subclass/DoubleSubclass classy
-L 0.001               :      89 Kbytes  :     0.1 Mbytes  L BaseClass/Subclass/DoubleSubclass classy
+H 0.001               :      96 Kbytes  :     0.1 Mbytes  H BaseClass/Subclass/DoubleSubclass classy
+L 0.001               :      96 Kbytes  :     0.1 Mbytes  L BaseClass/Subclass/DoubleSubclass classy
 === MEMORY USAGE ==========================================
-| 0.001               :      89 Kbytes  :     0.1 Mbytes  | BaseClass/Subclass/DoubleSubclass classy
+| 0.001               :      96 Kbytes  :     0.1 Mbytes  | BaseClass/Subclass/DoubleSubclass classy
