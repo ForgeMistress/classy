@@ -142,6 +142,8 @@ local function _classInclude(klass, mixin)
 	klass.static = _mergeTables(klass.name, klass.static, mixin.static)
 
 	klass.mixins[mixin] = true
+
+	return klass
 end
 
 local __classMT = {
