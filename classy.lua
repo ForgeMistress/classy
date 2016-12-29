@@ -90,7 +90,7 @@ local function _classFinalize(klass)
 	end
 	if klass.super then
 		setmetatable(klass.methods, { __index=klass.super.methods })
-		setmetatable(klass.static, { __index=klass.super.static })
+		--setmetatable(klass.static, { __index=klass.super.static })
 	end
 	
 	klass.__m_instanceMT = {
@@ -138,7 +138,7 @@ local function _classInclude(klass, mixin)
 	assert(not klass.mixins[mixin], "Mixin already included.")
 	
 	klass.methods = _mergeTables(klass.name, klass.methods, mixin.methods)
-	klass = _mergeTables(klass.name, klass, mixin.static)
+	klass.static = _mergeTables(klass.name, klass.static, mixin.static)
 
 	klass.mixins[mixin] = true
 	return klass
@@ -167,6 +167,7 @@ local function _classNewIndex(klass, key, value)
 	
 	if type(value) == 'function' then
 		klass.methods[key] = value
+		return
 	end
 	
 	assert(not klass.static[key], "Class already has key "..key)
@@ -192,9 +193,7 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 		methods = {
 			IsInstanceOf = _instanceIsInstanceOf;
 		};
-		static = {
-			IsSubclassOf = _classIsSubclassOf;
-		};
+		static = 0;
 		
 		mixins = {};
 		
@@ -209,6 +208,11 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 
 		__CLASSTAG__ = __classtag;
 	}
+	classtbl.static = setmetatable({
+		IsSubclassOf = _classIsSubclassOf;
+	}, { 
+		__index = classtbl.methods 
+	});
 	classtbl = setmetatable(classtbl, {
 		__index = classtbl.static;
 		__tostring = ("class "..classtbl.name);

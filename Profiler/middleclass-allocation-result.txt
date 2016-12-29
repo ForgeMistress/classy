@@ -1,13 +1,13 @@
 ###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 02:37:46
+#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 03:14:31
 #####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
 #####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
 ###############################################################################################################
 
-| TOTAL TIME = 6.358000
+| TOTAL TIME = 6.421000
 | FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
-| .\middleclass.lua                                 : new                                     :  123                : 5.567       : 87.56%      :  500000     |
-| profile.lua                                       : initialize                              :   76                : 0.724       : 11.39%      :  500000     |
+| .\middleclass.lua                                 : new                                     :  123                : 5.634       : 87.74%      :  500000     |
+| profile.lua                                       : initialize                              :   76                : 0.707       : 11.01%      :  500000     |
 | .\ProFi.lua                                       : setHighestMemoryReport                  :  408                : 0.000       : 0.00%       :       1     |
 | [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :       1     |
 | .\ProFi.lua                                       : checkMemory                             :   94                : 0.000       : 0.00%       :       1     |
@@ -26,7 +26,7 @@
 | [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |
 
 === HIGH & LOW MEMORY USAGE ===============================
-H 6.361               :   66669 Kbytes  :    65.1 Mbytes  H middleclass allocation Iteration 500000
-L 6.361               :   66669 Kbytes  :    65.1 Mbytes  L middleclass allocation Iteration 500000
+H 6.423               :   66668 Kbytes  :    65.1 Mbytes  H middleclass allocation Iteration 500000
+L 6.423               :   66668 Kbytes  :    65.1 Mbytes  L middleclass allocation Iteration 500000
 === MEMORY USAGE ==========================================
-| 6.361               :   66669 Kbytes  :    65.1 Mbytes  | middleclass allocation Iteration 500000
+| 6.423               :   66668 Kbytes  :    65.1 Mbytes  | middleclass allocation Iteration 500000

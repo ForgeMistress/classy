@@ -1,23 +1,23 @@
 ###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 02:37:57
+#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 03:14:41
 #####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
 #####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
 ###############################################################################################################
 
-| TOTAL TIME = 8.313000
+| TOTAL TIME = 8.288000
 | FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
-| .\classy.lua                                      : new                                     :  104                : 7.230       : 86.97%      :  500000     |
-| profile.lua                                       : __init__                                :   60                : 3.254       : 39.14%      :  500000     |
-| profile.lua                                       : __init__                                :   50                : 1.979       : 23.81%      :  500000     |
-| [string "DoubleSubclass"]                         : allocator                               :    0                : 0.802       : 9.65%       :  500000     |
-| profile.lua                                       : __init__                                :   34                : 0.692       : 8.32%       :  500000     |
-| .\ProFi.lua                                       : checkMemory                             :   94                : 0.001       : 0.01%       :       1     |
+| .\classy.lua                                      : new                                     :  104                : 7.266       : 87.67%      :  500000     |
+| profile.lua                                       : __init__                                :   60                : 3.249       : 39.20%      :  500000     |
+| profile.lua                                       : __init__                                :   50                : 1.934       : 23.33%      :  500000     |
+| [string "DoubleSubclass"]                         : allocator                               :    0                : 0.785       : 9.47%       :  500000     |
+| profile.lua                                       : __init__                                :   34                : 0.625       : 7.54%       :  500000     |
 | .\ProFi.lua                                       : setHighestMemoryReport                  :  408                : 0.000       : 0.00%       :       1     |
+| .\ProFi.lua                                       : startHooks                              :  234                : 0.000       : 0.00%       :       0     |
 | .\ProFi.lua                                       : setLowestMemoryReport                   :  418                : 0.000       : 0.00%       :       1     |
 | .\ProFi.lua                                       : stop                                    :   85                : 0.000       : 0.00%       :       1     |
 | [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :       1     |
 | .\ProFi.lua                                       : shouldReturn                            :  199                : 0.000       : 0.00%       :       1     |
-| .\ProFi.lua                                       : startHooks                              :  234                : 0.000       : 0.00%       :       0     |
+| .\ProFi.lua                                       : checkMemory                             :   94                : 0.000       : 0.00%       :       1     |
 | [C]                                               : pairs                                   :   -1                : 0.000       : 0.00%       :  500000     |
 | .\ProFi.lua                                       : stopHooks                               :  238                : 0.000       : 0.00%       :       1     |
 | [C]                                               : getTime                                 :   -1                : 0.000       : 0.00%       :       3     |
@@ -27,7 +27,7 @@
 | [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |
 
 === HIGH & LOW MEMORY USAGE ===============================
-H 8.315               :  152609 Kbytes  :   149.0 Mbytes  H classy inheritance-allocation Iteration 500000
-L 8.315               :  152609 Kbytes  :   149.0 Mbytes  L classy inheritance-allocation Iteration 500000
+H 8.292               :  152608 Kbytes  :   149.0 Mbytes  H classy inheritance-allocation Iteration 500000
+L 8.292               :  152608 Kbytes  :   149.0 Mbytes  L classy inheritance-allocation Iteration 500000
 === MEMORY USAGE ==========================================
-| 8.315               :  152609 Kbytes  :   149.0 Mbytes  | classy inheritance-allocation Iteration 500000
+| 8.292               :  152608 Kbytes  :   149.0 Mbytes  | classy inheritance-allocation Iteration 500000
