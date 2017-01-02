@@ -29,36 +29,17 @@ echo -- Lua = $lua
 echo -- Starting in $startdir
 echo
 
-for file in Profiler/Results/*-result.txt ; do
+for file in Profiler/*-result.txt ; do
 	rm $file
 done
 
 $lua profile.lua classy classes
-echo
-
-$lua profile.lua middleclass classes
-echo
-
 $lua profile.lua classy alloc
-echo
-
-$lua profile.lua middleclass alloc
-echo
-
 $lua profile.lua classy methods
-echo
-
-$lua profile.lua middleclass methods
-echo
-
 $lua profile.lua classy inheritance-alloc
-echo
-
-$lua profile.lua middleclass inheritance-alloc
-echo
-
 $lua profile.lua classy inheritance-methods
-echo
-
+$lua profile.lua middleclass classes
+$lua profile.lua middleclass alloc
+$lua profile.lua middleclass methods
+$lua profile.lua middleclass inheritance-alloc
 $lua profile.lua middleclass inheritance-methods
-echo
