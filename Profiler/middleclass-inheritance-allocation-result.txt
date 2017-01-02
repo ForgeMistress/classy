@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: inheritance-allocation on middleclass
+== Profiler: inheritance-allocation on middleclass(1000000 iterations)
 ================================================================================
-Elapsed time           : 0.552000 Seconds
-Starting Memory        : 8240.742188 Kb (8.047600 Mb)
-Stopping Memory        : 305125.011719 Kb (297.973644 Mb)
+Elapsed time           : 0.553000 Seconds
+Starting Memory        : 8240.826172 Kb (8.047682 Mb)
+Stopping Memory        : 305125.095703 Kb (297.973726 Mb)
 Change in memory usage : 296884.269531 Kb (289.926044 Mb)

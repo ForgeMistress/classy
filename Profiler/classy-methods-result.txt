@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: methods on classy
+== Profiler: methods on classy(1000000 iterations)
 ================================================================================
-Elapsed time           : 0.000000 Seconds
-Starting Memory        : 60.083984 Kb (0.058676 Mb)
-Stopping Memory        : 49.328125 Kb (0.048172 Mb)
+Elapsed time           : 0.002000 Seconds
+Starting Memory        : 60.176758 Kb (0.058766 Mb)
+Stopping Memory        : 49.420898 Kb (0.048263 Mb)
 Change in memory usage : -10.755859 Kb (-0.010504 Mb)

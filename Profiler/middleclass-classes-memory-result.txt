@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: classes on middleclass
+== Profiler: classes on middleclass(1000000 iterations)
 ================================================================================
 Elapsed time           : 0.000000 Seconds
-Starting Memory        : 49.729492 Kb (0.048564 Mb)
-Stopping Memory        : 53.206055 Kb (0.051959 Mb)
+Starting Memory        : 49.813477 Kb (0.048646 Mb)
+Stopping Memory        : 53.290039 Kb (0.052041 Mb)
 Change in memory usage : 3.476563 Kb (0.003395 Mb)

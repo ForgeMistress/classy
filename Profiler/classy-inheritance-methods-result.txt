@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: inheritance-methods on classy
+== Profiler: inheritance-methods on classy(1000000 iterations)
 ================================================================================
-Elapsed time           : 0.002000 Seconds
-Starting Memory        : 60.302734 Kb (0.058889 Mb)
-Stopping Memory        : 50.183594 Kb (0.049007 Mb)
+Elapsed time           : 0.001000 Seconds
+Starting Memory        : 60.395508 Kb (0.058980 Mb)
+Stopping Memory        : 50.276367 Kb (0.049098 Mb)
 Change in memory usage : -10.119141 Kb (-0.009882 Mb)

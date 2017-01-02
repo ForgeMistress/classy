@@ -12,7 +12,7 @@ elseif classlib == 'middleclass' then
 
 end
 --local ProFi = require("ProFi")
-local Profiler = require("Profiler").new(test.." on "..classlib)
+local Profiler = require("Profiler").new(test.." on "..classlib.."("..iterations.." iterations)")
 
 local note = classlib..' '..test
 local file = 'Profiler/'..classlib..'-'..test..'-result.txt'

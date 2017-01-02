@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: allocation on middleclass
+== Profiler: allocation on middleclass(1000000 iterations)
 ================================================================================
-Elapsed time           : 0.251000 Seconds
-Starting Memory        : 8240.707031 Kb (8.047565 Mb)
-Stopping Memory        : 133244.468750 Kb (130.121552 Mb)
+Elapsed time           : 0.256000 Seconds
+Starting Memory        : 8240.791016 Kb (8.047647 Mb)
+Stopping Memory        : 133244.552734 Kb (130.121634 Mb)
 Change in memory usage : 125003.761719 Kb (122.073986 Mb)
