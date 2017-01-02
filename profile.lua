@@ -11,10 +11,18 @@ elseif classlib == 'middleclass' then
 	class = require("middleclass")
 
 end
-local ProFi = require("ProFi")
+--local ProFi = require("ProFi")
+local Profiler = require("Profiler").new(test.." on "..classlib)
 
 local note = classlib..' '..test
 local file = 'Profiler/'..classlib..'-'..test..'-result.txt'
+
+local function WriteReport(profiler, filename)
+	local file = io.open(filename, "w")
+	file:write(profiler:GetFormattedReport())
+	file:flush()
+	file:close()
+end
 
 print(string.format("Profiling %s Class %s: %d iterations", classlib, test, iterations))
 
@@ -24,7 +32,7 @@ local DoubleSubclass
 
 if classlib == 'classy' then
 	if test == 'classes' then
-		ProFi:start(nil)
+		Profiler:Start()
 	end
 	BaseClass = class("BaseClass", {
 		Bar        = 0;
@@ -64,13 +72,12 @@ if classlib == 'classy' then
 	DoubleSubclass = DoubleSubclass:finalize()
 	
 	if test == 'classes' then
-		ProFi:checkMemory(0, "BaseClass/Subclass/DoubleSubclass "..classlib)
-		ProFi:stop()
-		ProFi:writeReport("Profiler/"..classlib.."-"..test.."-memory-result.txt")
+		Profiler:Stop()
+		WriteReport(Profiler, "Profiler/"..classlib.."-"..test.."-memory-result.txt")
 	end
 elseif classlib == 'middleclass' then
 	if test == 'classes' then
-		ProFi:start(nil)
+		Profiler:Start(nil)
 	end
 	BaseClass = class("BaseClass")
 	function BaseClass:initialize(foo,bar,baz)
@@ -96,9 +103,8 @@ elseif classlib == 'middleclass' then
 		self.AnotherNewTable = {}
 	end
 	if test == 'classes' then
-		ProFi:checkMemory(0, "BaseClass/Subclass/DoubleSubclass "..classlib)
-		ProFi:stop()
-		ProFi:writeReport("Profiler/"..classlib.."-"..test.."-memory-result.txt")
+		Profiler:Stop()
+		WriteReport(Profiler, "Profiler/"..classlib.."-"..test.."-memory-result.txt")
 	end
 end
 
@@ -115,27 +121,25 @@ if test == 'allocation' then
 
 	local tbl_insert = table.insert
 	
-	ProFi:start(nil)
+	Profiler:Start()
 	for i=1, iterations do
 		t[i] = BaseClass:new(2, 3, "String value!")
 	end
 	collectgarbage()
-	ProFi:checkMemory(0, note.." Iteration "..iterations)
-	ProFi:stop()
-	ProFi:writeReport(file)
+	Profiler:Stop()
+	WriteReport(Profiler, file)
 	
 elseif test == 'methods' then
 	local bar = 3
 	local instance = BaseClass:new(2, bar, "String value!")
 	
-	ProFi:start(nil)
+	Profiler:Start()
 	for i=1, iterations do
 		instance:func()
 	end
 	collectgarbage()
-	ProFi:checkMemory(0, note.." Iteration "..iterations)
-	ProFi:stop()
-	ProFi:writeReport(file)
+	Profiler:Stop()
+	WriteReport(Profiler, file)
 	
 	assert(instance.Bar == bar + iterations, "Result expected from function calls was wrong. Expected: "..bar + iterations.." Got: "..instance.Bar)
 
@@ -152,26 +156,24 @@ elseif test == 'inheritance-allocation' then
 
 	local tbl_insert = table.insert
 	
-	ProFi:start(nil)
+	Profiler:Start()
 	for i=1, iterations do
 		t[i] = DoubleSubclass:new(3)
 	end
 	collectgarbage()
-	ProFi:checkMemory(0, note.." Iteration "..iterations)
-	ProFi:stop()
-	ProFi:writeReport(file)
+	Profiler:Stop()
+	WriteReport(Profiler, file)
 	
 elseif test == 'inheritance-methods' then
 	local bar = 3
 	local instance = DoubleSubclass:new(bar)
 	
-	ProFi:start(nil)
+	Profiler:Start()
 	for i=1, iterations do
 		instance:func()
 	end
 	collectgarbage()
-	ProFi:checkMemory(0, note.." Iteration "..iterations)
-	ProFi:stop()
-	ProFi:writeReport(file)
+	Profiler:Stop()
+	WriteReport(Profiler, file)
 	assert(instance.Bar == bar + iterations, "Result expected from function calls was wrong. Expected: "..bar + iterations.." Got: "..instance.Bar)
 end

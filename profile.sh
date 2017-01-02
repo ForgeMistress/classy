@@ -33,7 +33,7 @@ for file in Profiler/Results/*-result.txt ; do
 	rm $file
 done
 
-iterations=500000
+iterations=1000000
 
 echo Profiling Classy Classes Memory
 $lua profile.lua classy classes $iterations

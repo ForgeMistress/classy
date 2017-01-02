@@ -175,7 +175,7 @@ local function _classNewIndex(klass, key, value)
 	
 	assert(not klass.static[key], "Class already has key "..key)
 	klass.static[key] = value
-end;
+end
 
 local function _classToString(klass) 
 	return ("class "..klass.name) 
@@ -200,11 +200,13 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 		methods = {
 			IsInstanceOf = _instanceIsInstanceOf;
 		};
-		static = 0;
-		
+		static = {
+			IsSubclassOf = _classIsSubclassOf;
+		};
+
 		mixins = {};
-		
-		id     = _makeClassID();
+
+		id = _makeClassID();
 
 		new      = _classNew;
 		subclass = _classSubclass;
@@ -215,11 +217,11 @@ function classy._defineClassImpl(name, classTemplate, superclass)
 
 		__CLASSTAG__ = __classtag;
 	}
-	classtbl.static = setmetatable({
-		IsSubclassOf = _classIsSubclassOf;
-	}, { 
+	
+	setmetatable(classtbl.static, { 
 		__index = classtbl.methods 
 	});
+	
 	classtbl = setmetatable(classtbl, {
 		__index = classtbl.static;
 		__tostring = _classToString;

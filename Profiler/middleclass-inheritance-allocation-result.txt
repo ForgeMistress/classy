@@ -1,39 +1,7 @@
-###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: 12/29/16 03:15:03
-#####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
-#####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
-###############################################################################################################
-
-| TOTAL TIME = 21.900000
-| FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
-| .\middleclass.lua                                 : new                                     :  123                : 17.240      : 78.72%      :  500000     |
-| .\middleclass.lua                                 : __index                                 :   82                : 6.827       : 31.17%      : 2500000     |
-| profile.lua                                       : initialize                              :   94                : 6.381       : 29.14%      :  500000     |
-| profile.lua                                       : initialize                              :   87                : 3.683       : 16.82%      :  500000     |
-| profile.lua                                       : initialize                              :   76                : 1.210       : 5.53%       :  500000     |
-| .\middleclass.lua                                 : __index                                 :   35                : 1.139       : 5.20%       :  500000     |
-| [C]                                               : collectgarbage                          :   -1                : 0.000       : 0.00%       :       2     |
-| .\ProFi.lua                                       : checkMemory                             :   94                : 0.000       : 0.00%       :       1     |
-| .\ProFi.lua                                       : setHighestMemoryReport                  :  408                : 0.000       : 0.00%       :       1     |
-| .\ProFi.lua                                       : setLowestMemoryReport                   :  418                : 0.000       : 0.00%       :       1     |
-| [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :       1     |
-| .\ProFi.lua                                       : shouldReturn                            :  199                : 0.000       : 0.00%       :       1     |
-| .\ProFi.lua                                       : stop                                    :   85                : 0.000       : 0.00%       :       1     |
-| [C]                                               : __index                                 :   -1                : 0.000       : 0.00%       :  500000     |
-| .\ProFi.lua                                       : startHooks                              :  234                : 0.000       : 0.00%       :       0     |
-| .\ProFi.lua                                       : stopHooks                               :  238                : 0.000       : 0.00%       :       1     |
-| [C]                                               : rawget                                  :   -1                : 0.000       : 0.00%       : 2500000     |
-| .\ProFi.lua                                       : start                                   :   67                : 0.000       : 0.00%       :       0     |
-| [C]                                               : getTime                                 :   -1                : 0.000       : 0.00%       :       3     |
-| .\middleclass.lua                                 : __index                                 :   84                : 0.000       : 0.00%       :  500000     |
-| [C]                                               : type                                    :   -1                : 0.000       : 0.00%       : 1000000     |
-| .\middleclass.lua                                 : allocate                                :  118                : 0.000       : 0.00%       :  500000     |
-| [C]                                               : assert                                  :   -1                : 0.000       : 0.00%       : 1000000     |
-| [C]                                               : allocate                                :   -1                : 0.000       : 0.00%       :  500000     |
-| [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |
-
-=== HIGH & LOW MEMORY USAGE ===============================
-H 21.903              :  152609 Kbytes  :   149.0 Mbytes  H middleclass inheritance-allocation Iteration 500000
-L 21.903              :  152609 Kbytes  :   149.0 Mbytes  L middleclass inheritance-allocation Iteration 500000
-=== MEMORY USAGE ==========================================
-| 21.903              :  152609 Kbytes  :   149.0 Mbytes  | middleclass inheritance-allocation Iteration 500000
+================================================================================
+== Profiler: inheritance-allocation on middleclass
+================================================================================
+Elapsed time           : 0.552000 Seconds
+Starting Memory        : 8240.742188 Kb (8.047600 Mb)
+Stopping Memory        : 305125.011719 Kb (297.973644 Mb)
+Change in memory usage : 296884.269531 Kb (289.926044 Mb)
