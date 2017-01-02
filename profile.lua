@@ -114,7 +114,6 @@ if test == 'allocation' then
 	for i=1, iterations do
 		t[i] = true
 	end
-	collectgarbage()
 	print("done!")
 
 	local i
@@ -125,7 +124,6 @@ if test == 'allocation' then
 	for i=1, iterations do
 		t[i] = BaseClass:new(2, 3, "String value!")
 	end
-	collectgarbage()
 	Profiler:Stop()
 	WriteReport(Profiler, file)
 	
@@ -137,7 +135,6 @@ elseif test == 'methods' then
 	for i=1, iterations do
 		instance:func()
 	end
-	collectgarbage()
 	Profiler:Stop()
 	WriteReport(Profiler, file)
 	
@@ -149,7 +146,6 @@ elseif test == 'inheritance-allocation' then
 	for i=1, iterations do
 		t[i] = true
 	end
-	collectgarbage()
 	print("done!")
 
 	local i
@@ -160,7 +156,6 @@ elseif test == 'inheritance-allocation' then
 	for i=1, iterations do
 		t[i] = DoubleSubclass:new(3)
 	end
-	collectgarbage()
 	Profiler:Stop()
 	WriteReport(Profiler, file)
 	
@@ -172,7 +167,6 @@ elseif test == 'inheritance-methods' then
 	for i=1, iterations do
 		instance:func()
 	end
-	collectgarbage()
 	Profiler:Stop()
 	WriteReport(Profiler, file)
 	assert(instance.Bar == bar + iterations, "Result expected from function calls was wrong. Expected: "..bar + iterations.." Got: "..instance.Bar)
