@@ -36,10 +36,10 @@ local Profiler = {
 ================================================================================
 == Profiler: %s
 ================================================================================
-Elapsed time           : %f Seconds
-Starting Memory        : %f Kb (%f Mb)
-Stopping Memory        : %f Kb (%f Mb)
-Change in memory usage : %f Kb (%f Mb)]])
+Elapsed time           : %.10f Seconds
+Starting Memory        : %.10f Kb (%.10f Mb)
+Stopping Memory        : %.10f Kb (%.10f Mb)
+Change in memory usage : %.10f Kb (%.10f Mb)]])
 :format(
 	self.__m_name,
 	self:GetElapsedTime(), 

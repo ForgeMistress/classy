@@ -33,44 +33,32 @@ for file in Profiler/Results/*-result.txt ; do
 	rm $file
 done
 
-iterations=1000000
-
-echo Profiling Classy Classes Memory
-$lua profile.lua classy classes $iterations
+$lua profile.lua classy classes
 echo
 
-echo Profiling Middleclass Classes Memory
-$lua profile.lua middleclass classes $iterations
+$lua profile.lua middleclass classes
 echo
 
-echo Profiling Classy Allocation
-$lua profile.lua classy allocation $iterations
+$lua profile.lua classy alloc
 echo
 
-echo Profiling Middleclass Allocation
-$lua profile.lua middleclass allocation $iterations
+$lua profile.lua middleclass alloc
 echo
 
-echo Profiling Classy Method Invocation
-$lua profile.lua classy methods $iterations
+$lua profile.lua classy methods
 echo
 
-echo Profiling Middleclass Method Invocation
-$lua profile.lua middleclass methods $iterations
+$lua profile.lua middleclass methods
 echo
 
-echo Profiling Classy Subclass Allocation
-$lua profile.lua classy inheritance-allocation $iterations
+$lua profile.lua classy inheritance-alloc
 echo
 
-echo Profiling Middleclass Subclass Allocation
-$lua profile.lua middleclass inheritance-allocation $iterations
+$lua profile.lua middleclass inheritance-alloc
 echo
 
-echo Profiling Classy Subclass Method Invocation
-$lua profile.lua classy inheritance-methods $iterations
+$lua profile.lua classy inheritance-methods
 echo
 
-echo Profiling Middleclass Subclass Method Invocation
-$lua profile.lua middleclass inheritance-methods $iterations
+$lua profile.lua middleclass inheritance-methods
 echo

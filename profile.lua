@@ -1,7 +1,8 @@
-
 local classlib = arg[1]
 local test = arg[2]
-local iterations = arg[3] or 500000
+local iterations = 5000000
+
+local Profiler = require("Profiler").new(test.." on library "..classlib.." ("..iterations.." iterations)")
 
 local class 
 if classlib == 'classy' then
@@ -11,20 +12,19 @@ elseif classlib == 'middleclass' then
 	class = require("middleclass")
 
 end
---local ProFi = require("ProFi")
-local Profiler = require("Profiler").new(test.." on "..classlib.."("..iterations.." iterations)")
 
-local note = classlib..' '..test
+local note = classlib..' '..test.." ("..iterations.." iterations)"
 local file = 'Profiler/'..classlib..'-'..test..'-result.txt'
 
-local function WriteReport(profiler, filename)
-	local file = io.open(filename, "w")
-	file:write(profiler:GetFormattedReport())
-	file:flush()
-	file:close()
-end
+print("Running test: "..note)
 
-print(string.format("Profiling %s Class %s: %d iterations", classlib, test, iterations))
+local function WriteReport(profiler, filename)
+	local f,err = io.open(filename, "w")
+	assert(f, err)
+	f:write(profiler:GetFormattedReport())
+	f:flush()
+	f:close()
+end
 
 local BaseClass 
 local Subclass
@@ -73,11 +73,11 @@ if classlib == 'classy' then
 	
 	if test == 'classes' then
 		Profiler:Stop()
-		WriteReport(Profiler, "Profiler/"..classlib.."-"..test.."-memory-result.txt")
+		WriteReport(Profiler, file)
 	end
 elseif classlib == 'middleclass' then
 	if test == 'classes' then
-		Profiler:Start(nil)
+		Profiler:Start()
 	end
 	BaseClass = class("BaseClass")
 	function BaseClass:initialize(foo,bar,baz)
@@ -104,22 +104,16 @@ elseif classlib == 'middleclass' then
 	end
 	if test == 'classes' then
 		Profiler:Stop()
-		WriteReport(Profiler, "Profiler/"..classlib.."-"..test.."-memory-result.txt")
+		WriteReport(Profiler, file)
 	end
 end
 
-if test == 'allocation' then
-	print("Preallocating insertion table...")
+if test == 'alloc' then
 	local t = {}
 	for i=1, iterations do
 		t[i] = true
 	end
-	print("done!")
 
-	local i
-
-	local tbl_insert = table.insert
-	
 	Profiler:Start()
 	for i=1, iterations do
 		t[i] = BaseClass:new(2, 3, "String value!")
@@ -140,18 +134,14 @@ elseif test == 'methods' then
 	
 	assert(instance.Bar == bar + iterations, "Result expected from function calls was wrong. Expected: "..bar + iterations.." Got: "..instance.Bar)
 
-elseif test == 'inheritance-allocation' then
-	print("Preallocating insertion table...")
+elseif test == 'inheritance-alloc' then
 	local t = {}
 	for i=1, iterations do
 		t[i] = true
 	end
-	print("done!")
 
 	local i
 
-	local tbl_insert = table.insert
-	
 	Profiler:Start()
 	for i=1, iterations do
 		t[i] = DoubleSubclass:new(3)

@@ -1,7 +1,7 @@
 ================================================================================
-== Profiler: methods on middleclass(1000000 iterations)
+== Profiler: methods on library middleclass (5000000 iterations)
 ================================================================================
-Elapsed time           : 0.001000 Seconds
-Starting Memory        : 53.415039 Kb (0.052163 Mb)
-Stopping Memory        : 49.122070 Kb (0.047971 Mb)
-Change in memory usage : -4.292969 Kb (-0.004192 Mb)
+Elapsed time           : 0.0050000000 Seconds
+Starting Memory        : 53.9902343750 Kb (0.0527248383 Mb)
+Stopping Memory        : 55.5332031250 Kb (0.0542316437 Mb)
+Change in memory usage : 1.5429687500 Kb (0.0015068054 Mb)
