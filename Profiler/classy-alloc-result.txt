@@ -1,7 +1,7 @@
 ================================================================================
 == Profiler: alloc on library classy (5000000 iterations)
 ================================================================================
-Elapsed time           : 1.1770000000 Seconds
-Starting Memory        : 65595.2783203125 Kb (64.0578889847 Mb)
-Stopping Memory        : 690585.9716796875 Kb (674.4003629684 Mb)
-Change in memory usage : 624990.6933593750 Kb (610.3424739838 Mb)
+Elapsed time           : 0.6770000000 Seconds
+Starting Memory        : 65626.6816406250 Kb (64.0885562897 Mb)
+Stopping Memory        : 690605.7734375000 Kb (674.4197006226 Mb)
+Change in memory usage : 624979.0917968750 Kb (610.3311443329 Mb)

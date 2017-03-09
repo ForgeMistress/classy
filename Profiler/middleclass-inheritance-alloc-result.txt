@@ -1,7 +1,7 @@
 ================================================================================
 == Profiler: inheritance-alloc on library middleclass (5000000 iterations)
 ================================================================================
-Elapsed time           : 3.2570000000 Seconds
-Starting Memory        : 65591.2138671875 Kb (64.0539197922 Mb)
-Stopping Memory        : 1549968.7275390625 Kb (1513.6413354874 Mb)
+Elapsed time           : 3.0300000000 Seconds
+Starting Memory        : 65591.3505859375 Kb (64.0540533066 Mb)
+Stopping Memory        : 1549968.8642578125 Kb (1513.6414690018 Mb)
 Change in memory usage : 1484377.5136718750 Kb (1449.5874156952 Mb)

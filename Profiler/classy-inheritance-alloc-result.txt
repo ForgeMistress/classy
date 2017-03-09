@@ -1,7 +1,7 @@
 ================================================================================
 == Profiler: inheritance-alloc on library classy (5000000 iterations)
 ================================================================================
-Elapsed time           : 2.8280000000 Seconds
-Starting Memory        : 65595.3251953125 Kb (64.0579347610 Mb)
-Stopping Memory        : 1549965.9052734375 Kb (1513.6385793686 Mb)
-Change in memory usage : 1484370.5800781250 Kb (1449.5806446075 Mb)
+Elapsed time           : 1.1560000000 Seconds
+Starting Memory        : 65626.7285156250 Kb (64.0886020660 Mb)
+Stopping Memory        : 1315608.7900390625 Kb (1284.7742090225 Mb)
+Change in memory usage : 1249982.0615234375 Kb (1220.6856069565 Mb)

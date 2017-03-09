@@ -2,6 +2,6 @@
 == Profiler: classes on library classy (5000000 iterations)
 ================================================================================
 Elapsed time           : 0.0000000000 Seconds
-Starting Memory        : 49.6357421875 Kb (0.0484724045 Mb)
-Stopping Memory        : 57.9580078125 Kb (0.0565996170 Mb)
-Change in memory usage : 8.3222656250 Kb (0.0081272125 Mb)
+Starting Memory        : 79.9404296875 Kb (0.0780668259 Mb)
+Stopping Memory        : 89.3613281250 Kb (0.0872669220 Mb)
+Change in memory usage : 9.4208984375 Kb (0.0092000961 Mb)

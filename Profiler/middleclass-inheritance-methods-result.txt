@@ -2,6 +2,6 @@
 == Profiler: inheritance-methods on library middleclass (5000000 iterations)
 ================================================================================
 Elapsed time           : 0.0050000000 Seconds
-Starting Memory        : 54.1904296875 Kb (0.0529203415 Mb)
-Stopping Memory        : 56.6279296875 Kb (0.0553007126 Mb)
+Starting Memory        : 54.3271484375 Kb (0.0530538559 Mb)
+Stopping Memory        : 56.7646484375 Kb (0.0554342270 Mb)
 Change in memory usage : 2.4375000000 Kb (0.0023803711 Mb)

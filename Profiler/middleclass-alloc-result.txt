@@ -1,7 +1,7 @@
 ================================================================================
 == Profiler: alloc on library middleclass (5000000 iterations)
 ================================================================================
-Elapsed time           : 1.0970000000 Seconds
-Starting Memory        : 65591.1044921875 Kb (64.0538129807 Mb)
-Stopping Memory        : 690588.1845703125 Kb (674.4025239944 Mb)
-Change in memory usage : 624997.0800781250 Kb (610.3487110138 Mb)
+Elapsed time           : 1.4980000000 Seconds
+Starting Memory        : 65590.8212890625 Kb (64.0535364151 Mb)
+Stopping Memory        : 690588.3212890625 Kb (674.4026575089 Mb)
+Change in memory usage : 624997.5000000000 Kb (610.3491210938 Mb)
